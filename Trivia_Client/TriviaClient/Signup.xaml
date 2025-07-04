@@ -1,0 +1,92 @@
+﻿<Window x:Class="TriviaClient.Signup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TriviaClient"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="Signup" Height="500" Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="1.5*"/>
+		</Grid.ColumnDefinitions>
+
+		<Image Source="/Images/close.png" Grid.Column="1" Panel.ZIndex="1" MouseUp="CloseImage_MouseUp" Style="{StaticResource imgClose}"/>
+
+		<Border CornerRadius="10 0 0 10">
+			<Border.Background>
+				<LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+					<GradientStop Color="#FFF37413" Offset="0.5"/>
+					<GradientStop Color="White" Offset="1"/>
+				</LinearGradientBrush>
+			</Border.Background>
+		</Border>
+
+		<Grid>
+			<Canvas>
+				<Polygon Points="0,20 230,140 0,270" Fill="#F38701"/>
+				<Polygon Points="100,400,200,370,180,470" Fill="#616D3D"/>
+				<Ellipse Margin="250 450 0 0" Width="40" Height="40" Fill="#616D3D"/>
+				<Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="#616D3D"/>
+			</Canvas>
+
+			<StackPanel VerticalAlignment="Center">
+				<TextBlock Text="Trivia Game" Style="{StaticResource titleText}" Foreground="White"/>
+				<TextBlock Text="A trivia game is a competitive activity where participants answer questions on a wide range of topics to demonstrate their knowledge and earn points" Style="{StaticResource normalText}" Opacity="0.8" Margin="20 30"/>
+			</StackPanel>
+		</Grid>
+
+		<Border Background="#ffffff" Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
+			<StackPanel>
+				<TextBlock Text="Create New Account" Style="{StaticResource titleText}" Foreground="Black" Margin="0 60"/>
+
+				<TextBlock Text="Thank You for Joining us!" Style="{StaticResource normalText}" Foreground="#878787" Margin="0 -55 0 50"/>
+
+				<Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+					<Grid Margin="7 9">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Image Source="/Images/user.png" Height="20"/>
+						<TextBlock x:Name="textUsername" MouseDown="TextUsername_MouseDown" Text=" Username" Style="{StaticResource textHint}"/>
+						<TextBox x:Name="txtUsername" TextChanged="TxtUsername_TextChanged" Style="{StaticResource textBox}"/>
+					</Grid>
+				</Border>
+
+				<Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+					<Grid Margin="7 9">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Image Source="/Images/mail.png" Height="20"/>
+						<TextBlock x:Name="textEmail" MouseDown="TextEmail_MouseDown" Text=" Email" Style="{StaticResource textHint}"/>
+						<TextBox x:Name="txtEmail" TextChanged="TxtEmail_TextChanged" Style="{StaticResource textBox}"/>
+					</Grid>
+				</Border>
+
+				<Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+					<Grid Margin="7 9">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Image Source="/Images/padlock.png" Height="20"/>
+						<TextBlock x:Name="textPassword" MouseDown="TextPassword_MouseDown" Text=" Password" Style="{StaticResource textHint}"/>
+						<PasswordBox x:Name="txtPassword" PasswordChanged="TxtPassword_PasswordChanged" Style="{StaticResource textBox}"/>
+						<TextBox x:Name="txtVisiblePassword" Text="{Binding ElementName=txtPassword, Path=Password}" Style="{StaticResource textBox}" Visibility="Collapsed"/>
+					</Grid>
+				</Border>
+				<CheckBox x:Name="ShowPasswordCheckBox" Content="Show Password" Checked="ShowPasswordCheckBox_Checked" Unchecked="ShowPasswordCheckBox_Unchecked" Margin="75 5"/>
+				<Button Content="Sign Up" Click="Button_Click" Style="{StaticResource mainbutton}" Background="#FFF7A400"/>
+				<TextBlock Text="Already have an account?" Style="{StaticResource normalText}" Foreground="Black" Margin="0 3 125 0" FontSize="10" Width="115"/>
+				<Button Content="Log In" Click="MoveToLogin" Style="{StaticResource button}" Margin="30 -45 0 0" FontSize="11" Width="45" Height="17"/>
+			</StackPanel>
+		</Border>
+	</Grid>
+</Window>

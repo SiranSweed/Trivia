@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TriviaClient
+{
+    enum RequestCodes : byte
+    {
+        LOGIN_REQ_CODE = 101,
+        SIGNUP_REQ_CODE,
+        CREATE_ROOM_REQ_CODE,
+        GET_ROOMS_REQ_CODE,
+        GET_PLAYERS_IN_ROOM_REQ_CODE,
+        JOIN_ROOM_REQ_CODE,
+        GET_STATS_REQ_CODE,
+        GET_HIGH_SCORES_REQ_CODE,
+        LOGOUT_REQ_CODE,
+        CLOSE_ROOM_REQ_CODE,
+        START_GAME_REQ_CODE,
+        GET_ROOM_STATE_REQ_CODE,
+        LEAVE_ROOM_REQ_CODE
+    };
+
+    enum ResponseCodes : byte
+    {
+        ERROR_RESP_CODE = 201,
+        LOGIN_RESP_CODE,
+        SIGNUP_RESP_CODE,
+        CREATE_ROOM_RESP_CODE,
+        GET_ROOMS_RESP_CODE,
+        GET_PLAYERS_IN_ROOM_RESP_CODE,
+        JOIN_ROOM_RESP_CODE,
+        GET_STATS_RESP_CODE,
+        GET_HIGH_SCORE_RESP_CODE,
+        LOGOUT_RESP_CODE,
+        CLOSE_ROOM_RESP_CODE,
+        START_GAME_RESP_CODE,
+        GET_ROOM_STATE_RESP_CODE,
+        LEAVE_ROOM_RESP_CODE
+    };
+}
